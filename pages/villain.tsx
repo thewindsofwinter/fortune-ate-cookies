@@ -2,25 +2,24 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import FortuneGenerator from './components/FortuneGenerator'
+import VillainGenerator from './components/VillainGenerator'
 import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Fortune Cookie Generator</title>
-        <meta name="description" content="AI fortune cookie generator" />
-        <meta name="google-site-verification" content="-GzBr54C5YX8Z-WJaFThDRCWkQiQkuKiB4XxI6c3gPo" />
+        <title>Villain Generator</title>
+        <meta name="description" content="AI villain generator" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <FortuneGenerator />
+        <VillainGenerator />
       </main>
 
       <footer className={styles.footer}>
-        <Link href="/villain">See also: [build your own villain]</Link>
+        <Link href="/">See also: [optimize your own fortune cookie]</Link>
         <a
           href="/__repl"
           target="_blank"

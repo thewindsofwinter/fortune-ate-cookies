@@ -2,26 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-primary: #ef9c99;
+    --color-primary-hover: #f24832;
+    --color-download: #99ef9c;
+    --color-download-hover: #32f248;
+    --color-load: #cedf2b;
+    --color-load-hover: #adb016;
+    --color-text: #0E0E10;
+    --color-background: #E5E4E2;
   }
 }
 
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer components { 
+  .btn-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .btn, .btn input {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  .fit {
+    width: fit-content;
+    margin-top: 2rem;
+  }
+
+  .fit input{
+    min-width: 40rem;
+  }
+  
+  .btn-generate {
+    background-color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-primary-hover);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-generate:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .btn-export {
+    background-color: var(--color-download);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-download-hover);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-export:hover {
+    background-color: var(--color-download-hover);
+  }
+
+  .btn-load {
+    background-color: var(--color-load);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-load-hover);
+    transition: background-color 0.3s ease;
+  }
+
+  input {
+    margin-left: 0.5rem;
+  }
+
+  .btn-load:hover {
+    background-color: var(--color-load-hover);
+  }
+
+  .comparison-pane {
+    /* Define styles for the comparison pane */
+  }
 }
